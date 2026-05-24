@@ -258,6 +258,108 @@ section{
     line-height:1.7;
 }
 
+/* Timeline */
+
+.timeline{
+    position:relative;
+    max-width:1200px;
+    margin:auto;
+    padding-top:20px;
+}
+
+.timeline::after{
+    content:'';
+    position:absolute;
+    width:4px;
+    background:linear-gradient(to bottom,#00d0ff,#7a5cff);
+    top:0;
+    bottom:0;
+    left:50%;
+    margin-left:-2px;
+    border-radius:10px;
+    box-shadow:0 0 20px #00d0ff88;
+}
+
+.timeline-container{
+    padding:10px 50px;
+    position:relative;
+    width:50%;
+}
+
+.timeline-container::after{
+    content:'';
+    position:absolute;
+    width:22px;
+    height:22px;
+    right:-11px;
+    background:#0b0f1a;
+    border:4px solid #00d0ff;
+    top:30px;
+    border-radius:50%;
+    z-index:1;
+    box-shadow:0 0 20px #00d0ff;
+}
+
+.left{
+    left:0;
+}
+
+.right{
+    left:50%;
+}
+
+.right::after{
+    left:-11px;
+}
+
+.timeline-content{
+    padding:30px;
+    position:relative;
+}
+
+.timeline-content h2{
+    margin-bottom:10px;
+    font-size:24px;
+}
+
+.timeline-content p{
+    color:#cfcfcf;
+    line-height:1.7;
+}
+
+.timeline-year{
+    display:inline-block;
+    margin-bottom:15px;
+    padding:6px 14px;
+    border-radius:30px;
+    background:linear-gradient(to right,#00d0ff,#7a5cff);
+    font-size:14px;
+    font-weight:600;
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.timeline::after{
+    left:30px;
+}
+
+.timeline-container{
+    width:100%;
+    padding-left:80px;
+    padding-right:25px;
+}
+
+.timeline-container::after{
+    left:19px;
+}
+
+.right{
+    left:0%;
+}
+
+}
 /* Contact */
 
 .contact{
@@ -332,6 +434,7 @@ nav ul{
         <li><a href="#certificates">Certificates</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#timeline">Timeline</a></li>
     </ul>
 </nav>
 
@@ -516,6 +619,77 @@ Well, this is it. I will add all my certificates, achievements and more here for
 
 </section>
 
+<!-- TIMELINE -->
+
+<section id="timeline">
+
+<h1 class="section-title">My Journey</h1>
+
+<div class="timeline">
+
+<div class="timeline-container left">
+
+<div class="glass timeline-content">
+
+<span class="timeline-year">2023</span>
+
+<h2>Started to show a little interest in coding and video games</h2>
+
+<p>
+At 11 years old, I was mostly impressed by the video games and softwares and the tech master things
+</p>
+
+</div>
+</div>
+
+<div class="timeline-container right">
+
+<div class="glass timeline-content">
+
+<span class="timeline-year">2024</span>
+
+<h2>Doing non computer game systems and designing</h2>
+
+<p>
+I started designing video games and level design and some very basic python and html via school. Still no real digital work
+</p>
+
+</div>
+</div>
+
+<div class="timeline-container left">
+
+<div class="glass timeline-content">
+
+<span class="timeline-year">2025</span>
+
+<h2>Content creation and graphic designing</h2>
+
+<p>
+So I began to finally start some real software but instead of coding I drew digital art, editted videos and sent them on youtube. Sorry but I deleted that channel so I have nothing to showcase. I also learnt some basics like drafting emails.
+</p>
+
+</div>
+</div>
+
+<div class="timeline-container right">
+
+<div class="glass timeline-content">
+
+<span class="timeline-year">2026</span>
+
+<h2>Portfolio & Real coding and AI Projects</h2>
+At 14, I finally started coding webpages and python with AI to learn advanced coding and to make real projects. I am still learning python and ai making and will be making more projects soon
+<p>
+
+</p>
+
+</div>
+</div>
+
+</div>
+
+</section>
 <!-- CONTACT -->
 
 <section id="contact">
