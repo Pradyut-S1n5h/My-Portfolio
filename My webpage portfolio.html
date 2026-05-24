@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Personal Web</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0b0f1a;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Animated Background */
+
+body::before{
+    content:'';
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at top left,#1f3fff55,transparent 30%),
+    radial-gradient(circle at bottom right,#7a00ff55,transparent 30%),
+    radial-gradient(circle at center,#00d0ff22,transparent 40%);
+    z-index:-2;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:100%;
+    height:100%;
+    backdrop-filter:blur(90px);
+    z-index:-1;
+}
+
+/* Navbar */
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.25);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    background:linear-gradient(to right,#00d0ff,#7a5cff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+    font-size:15px;
+}
+
+nav ul li a:hover{
+    color:#00d0ff;
+}
+
+/* Hero Section */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:0 10%;
+}
+
+.hero-content h1{
+    font-size:75px;
+    font-weight:700;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero-content h1 span{
+    background:linear-gradient(to right,#00d0ff,#7a5cff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero-content p{
+    max-width:700px;
+    margin:auto;
+    font-size:18px;
+    color:#cfcfcf;
+    line-height:1.7;
+}
+
+.hero-btns{
+    margin-top:40px;
+}
+
+.btn{
+    padding:14px 32px;
+    border:none;
+    border-radius:40px;
+    background:linear-gradient(to right,#00d0ff,#7a5cff);
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btno{
+    padding:4px 10px;
+    border:none;
+    border-radius:40px;
+    background:linear-gradient(to right,#00d0ff,#7a5cff);
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(0,208,255,0.3);
+}
+
+/* Section */
+
+section{
+    padding:120px 10%;
+}
+
+.section-title{
+    font-size:42px;
+    margin-bottom:50px;
+    text-align:center;
+    background:linear-gradient(to right,#00d0ff,#7a5cff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+/* Glass Cards */
+
+.glass{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    border-radius:25px;
+    padding:35px;
+    transition:0.3s;
+}
+
+.glass:hover{
+    transform:translateY(-10px);
+    border-color:#00d0ff55;
+}
+
+/* About */
+
+.about-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.about-text h2{
+    margin-bottom:20px;
+    font-size:30px;
+}
+
+.about-text p{
+    color:#d8d8d8;
+    line-height:1.8;
+}
+
+/* Skills */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.skill-card h3{
+    margin-bottom:10px;
+}
+
+.skill-card p{
+    color:#cfcfcf;
+}
+
+/* Certificates */
+
+.certificates{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.certificate-card img{
+    width:100%;
+    border-radius:18px;
+    margin-bottom:20px;
+}
+
+.certificate-card h3{
+    margin-bottom:10px;
+}
+
+.certificate-card p{
+    color:#cfcfcf;
+    line-height:1.7;
+}
+
+/* Projects */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.project-card h3{
+    margin-bottom:15px;
+}
+
+.project-card p{
+    color:#cfcfcf;
+    line-height:1.7;
+}
+
+/* Contact */
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    color:#cfcfcf;
+    margin-bottom:20px;
+}
+
+.socials{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.socials a{
+    text-decoration:none;
+    color:white;
+    padding:12px 22px;
+    border-radius:40px;
+    background:rgba(255,255,255,0.08);
+    transition:0.3s;
+}
+
+.socials a:hover{
+    background:#00d0ff;
+    transform:translateY(-5px);
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#a0a0a0;
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.hero-content h1{
+    font-size:52px;
+}
+
+.about-box{
+    grid-template-columns:1fr;
+}
+
+nav ul{
+    gap:15px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+    <div class="logo">My portfolio</div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Hello, I'm <span>Pradyut Singh</span></h1>
+
+<p>
+Hello to the one who is reading this, I am Pradyut Singh, I am a 14 year old right now. You can scroll down the webpage or use the top left tabs to see the wanted info.
+</p>
+
+<div class="hero-btns">
+<a href="#about" class="btn">Explore Portfolio</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h1 class="section-title">About Me</h1>
+
+<div class="about-box">
+
+<div class="glass about-text">
+
+<h2>Who Am I?</h2>
+
+<p>
+I enjoy building projects related to AI, web development, strategy systems, and design. I also enjoy learning Japanese, drawing, and creating game mechanics.
+</p>
+
+</div>
+
+<div class="glass about-text">
+
+<h2>Quick Info</h2>
+
+<p>
+
+ Location: Not Defined for now<br><br>
+
+ School/Class: Dehli Public School Ghaziabad Vasunshara 9th A<br><br>
+
+ Best Skills: Drawing, Software developement(Specially frontend webpage), Karate, Chess, Advanced Maths, Chemistry and Physics <br><br>
+
+ Main school subjects: English, Maths, Economics, Social Science, Chemistry, AI, Physics, Japanese, Biology<br><br>
+
+ Future Goal: Buisnessman, Artist and Software developer
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h1 class="section-title">My Skills</h1>
+
+<div class="skills-grid">
+
+<div class="glass skill-card">
+<h3>Skill 1</h3>
+<p> Software developement</p>
+</div>
+
+<div class="glass skill-card">
+<h3>Skill 2</h3>
+<p>Drawing, Designing</p>
+</div>
+
+<div class="glass skill-card">
+<h3>Skill 3</h3>
+<p>Logic, system and strategy making</p>
+</div>
+
+<div class="glass skill-card">
+<h3>Skill 4</h3>
+<p>Advanced mathematics, chemistry and physics</p>
+</div>
+
+<div class="glass skill-card" p-align="center">
+<h3>Skill 5</h3>
+<p>Speaking and communication</p>
+</div>
+
+<div class="glass skill-card">
+<h3>Skill 6</h3>
+<p>Independent thinking</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CERTIFICATES -->
+
+<section id="certificates">
+
+<h1 class="section-title">Certificates</h1>
+
+<div class="certificates">
+
+<div class="glass certificate-card">
+
+<img src="WRITE_IMAGE_NAME_HERE.png" alt="Certificate">
+
+<h3>Certificate Name</h3>
+
+<p>
+Will be added
+</p>
+
+</div>
+
+<div class="glass certificate-card">
+
+<img src="WRITE_IMAGE_NAME_HERE.png" alt="Certificate">
+
+<h3>Certificate Name</h3>
+
+<p>
+Will be added
+</p>
+
+</div>
+
+<div class="glass certificate-card">
+
+<img src="WRITE_IMAGE_NAME_HERE.png" alt="Certificate">
+
+<h3>Certificate Name</h3>
+
+<p>
+Will be added
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h1 class="section-title">Projects</h1>
+
+<div class="projects">
+
+<div class="glass project-card">
+<h3>AI content creation pieline</h3>
+<p>
+I am making a content piepline which can generate script, charecter design, story, storyboards, and charecter drawings to make videos. I am using python and am going add huggingface API for both image and video generation.
+</p>
+<a href="https://github.com/Pradyut-S1n5h/AI-content-pipeline" class="btno"> view project </a href>
+</div>
+
+<div class="glass project-card">
+<h3>My personal portfolio webpage</h3>
+<p>
+Well, this is it. I will add all my certificates, achievements and more here for future use and also help you navigate to any other works or platforms where I am directly or indirectly involved
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h1 class="section-title">Contact</h1>
+
+<div class="glass contact">
+
+<p>
+For any questions regarding my portoflio or any related subjects, please contact 93115 67536 OR Email kidskingdom1207@gmail.com
+</p>
+
+<div class="socials">
+
+<a href="https://github.com/Pradyut-S1n5h">Github</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 Pradyut Singh • Personal Portfolio Website
+</footer>
+
+</body>
+</html>
